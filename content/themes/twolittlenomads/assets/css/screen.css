@@ -923,8 +923,8 @@ body.nav-opened .nav {
     position: relative;
     width: 80%;
     max-width: 710px;
-    margin: 4rem auto;
-    padding-bottom: 4rem;
+    margin: 0rem auto;
+    padding: 10rem 0;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
 }
@@ -962,6 +962,7 @@ body:not(.post-template) .post-title {
 
 .read-more {
     text-decoration: none;
+    color:#f48d91;
 }
 
 .post-meta {

@@ -45,21 +45,22 @@
     {{ghost_foot}}
 
     {{! The main JavaScript file for Casper }}
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
     <script type="text/javascript" src="{{asset "js/jquery.fullPage.js"}}"></script>        
     <script type="text/javascript" src="{{asset "js/jquery.slimscroll.min.js"}}"></script>
     <script>
-        $(document).ready(function() {
-            $('#fullpage').fullpage({
-                anchors: ['landing', 'main-content'],
-                scrollingSpeed: 1000,
-                //easing: 'swing'
-                easing: 'easeInOutCubic',
-                scrollOverflow: true,
+            $(document).ready(function() {
+                $('#fullpage').fullpage({
+                    anchors: ['landing', 'main-content'],
+                    scrollingSpeed: 1000,
+                    easing: 'easeInOutCubic',
+                    scrollOverflow: true,
+                    autoScrolling: true,
+                    normalScrollElements: '#post-list'
+                });
             });
-        });
     </script>
 </body>
 </html>
