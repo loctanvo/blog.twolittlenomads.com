@@ -3,8 +3,9 @@
 
 {{! The big featured header }}
 <div id="fullpage">
-    <div class="section" data-anchor="landing">
-        <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="section main-header-image" data-anchor="landing" style="background-image: url({{@blog.cover}})">
+<!--        <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">-->
+            <header class="main-header">
             <nav class="main-nav overlay clearfix">
                 {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
                 {{#if @blog.navigation}}
