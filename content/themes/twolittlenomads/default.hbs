@@ -19,8 +19,7 @@
 <!--    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />-->
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Josefin+Slab|Raleway:700,400'>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lora|Crimson+Text|Amiri|Prata' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{asset "js/jquery.fullPage.css"}}" />
+    <link href='http://fonts.googleapis.com/css?family=Lora|Crimson+Text|Amiri|Prata' rel='stylesheet' type='text/css'>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -47,20 +46,5 @@
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-
-    <script type="text/javascript" src="{{asset "js/jquery.fullPage.js"}}"></script>        
-    <script type="text/javascript" src="{{asset "js/jquery.slimscroll.min.js"}}"></script>
-    <script>
-            $(document).ready(function() {
-                $('#fullpage').fullpage({
-                    anchors: ['landing', 'main-content'],
-                    scrollingSpeed: 1000,
-                    easing: 'easeInOutCubic',
-                    scrollOverflow: true,
-                    autoScrolling: true,
-                    normalScrollElements: '#post-list'
-                });
-            });
-    </script>
 </body>
 </html>
