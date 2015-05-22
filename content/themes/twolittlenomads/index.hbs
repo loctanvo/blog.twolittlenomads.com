@@ -32,9 +32,8 @@
     <div class="site-wrapper">
         {{! The big featured header }}
         <div id="fullpage">
-            <div class="section main-header-image" data-anchor="landing" style="background-image: url({{@blog.cover}})">
-        <!--        <header class="main-header {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">-->
-                    <header class="main-header">
+            <div id="landing-image" class="section main-header-image" data-anchor="landing" style="background-image: url({{@blog.cover}})">
+                <header class="main-header">
                     <nav class="main-nav overlay clearfix">
                         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
                         {{#if @blog.navigation}}
@@ -47,8 +46,6 @@
                             <h2 class="page-description">{{@blog.description}}</h2>
                         </div>
                     </div>
-                    
-        <!--            <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>-->
                     <div data-menuanchor="main-content">
                         <a class="scroll-down icon-arrow-left" href="#main-content"  data-offset="-45"><span class="hidden">Scroll Down</span></a>        
                     </div>
@@ -90,7 +87,7 @@
                     easing: 'easeInOutCubic',
                     scrollOverflow: true,
                     autoScrolling: true,
-                    normalScrollElements: '#post-list'
+                    normalScrollElements: '#landing-image, #post-list'
                 });
             });
     </script>
