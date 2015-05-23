@@ -5,24 +5,28 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article id="{{id}}" class="{{post_class}}">
-    <hr class="post-date-line" />
-    <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-    <i class="post-meta-text post-meta-icon fa fa-heart fa-2x"></i>
-    <div class="post-meta post-meta-text tags">
-        {{tags}}
-    </div>
-    <hr class="post-header-line top"/>
-    <header class="post-header">
-        <h2 class="post-title">{{title}}</h2>
-    </header>
-    <hr class="post-header-line bottom"/>
+<article id="{{id}}" class="blog-post">
     {{#if image}}
-        <img class="post-header-image" src="{{image}}" alt="Blog post image" nopin="nopin" />
+        <div class="post-header-image" style="background-image: url({{image}})"></div>
+    {{else}}
+        <hr class="post-date-line" />
     {{/if}}
-    <section class="post-content">
-        {{content}}
-    </section>
+    <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+    <div class="{{post_class}}">
+        <i class="post-meta-text post-meta-icon fa fa-heart fa-2x"></i>
+        <div class="post-meta post-meta-text tags">
+            {{tags}}
+        </div>
+        <hr class="post-header-line top"/>
+        <header class="post-header">
+            <h2 class="post-title">{{title}}</h2>
+        </header>
+        <hr class="post-header-line bottom"/>
+        <section class="post-content">
+            {{content}}
+        </section>    
+    </div>
+    
 </article>
 {{/foreach}}
 
