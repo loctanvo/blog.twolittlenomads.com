@@ -5,7 +5,7 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article class="{{post_class}}">
+<article id="{{id}}" class="{{post_class}}">
     <hr class="post-date-line" />
     <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
     <i class="post-meta-text post-meta-icon fa fa-heart fa-2x"></i>
@@ -14,13 +14,15 @@
     </div>
     <hr class="post-header-line top"/>
     <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        <h2 class="post-title">{{title}}</h2>
     </header>
     <hr class="post-header-line bottom"/>
+    {{#if image}}
+        <img class="post-header-image" src="{{image}}" alt="Blog post image" nopin="nopin" />
+    {{/if}}
     <section class="post-content">
         {{content}}
     </section>
-    
 </article>
 {{/foreach}}
 
