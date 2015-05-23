@@ -954,8 +954,7 @@ body:not(.post-template) .post-title {
     text-decoration: none;
 }
 
-.post-excerpt p {
-    margin: 0;
+.post-excerpt p, .post-content p {
     font-size: 0.9em;
     line-height: 1.5em;
 }
@@ -964,14 +963,21 @@ body:not(.post-template) .post-title {
     text-decoration: none;
     color:#f48d91;
 }
+.post-content {
+    margin-top:1.75em;    
+}
 
 .post-meta {
     display: block;
-    margin: 1.75rem 0 0 0;
     font-family: 'EB Garamond', sans-serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
     text-align: center;
+}
+
+.post-meta.tags{
+    margin-bottom: 20px;
+    min-height: 10px;
 }
 
 .post-meta-text {
@@ -998,7 +1004,7 @@ body:not(.post-template) .post-title {
 .post-meta-icon {
     display:block !important;
     text-align:center;
-    margin: 40px 0;
+    margin: 40px 0 10px 0;
 }
 
 .user-meta {

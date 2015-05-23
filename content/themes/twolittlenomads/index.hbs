@@ -33,6 +33,7 @@
     <div class="site-wrapper">
         {{! The big featured header }}
         <div id="fullpage">
+            {{^is "paged"}} 
             <div id="landing-image" class="section main-header-image" data-anchor="landing" style="background-image: url({{@blog.cover}})">
                 <header class="main-header">
                     <nav class="main-nav overlay clearfix">
@@ -50,9 +51,9 @@
                     <div data-menuanchor="main-content">
                         <a class="scroll-down icon-arrow-left" href="#main-content"  data-offset="-45"><span class="hidden">Scroll Down</span></a>        
                     </div>
-        
                 </header>
             </div>
+            {{/is}}
             
             {{! The main content area on the homepage }}
             <div class="section" data-anchor="main-content" id="post-list">
