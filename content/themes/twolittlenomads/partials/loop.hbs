@@ -6,7 +6,9 @@
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
 <article class="{{post_class}}">
-    <time class="post-date post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+    <hr class="post-date-line" />
+    <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+    <i class="post-meta-text post-meta-icon fa fa-heart fa-2x"></i>
     <hr class="post-header-line top"/>
     <header class="post-header">
         <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
