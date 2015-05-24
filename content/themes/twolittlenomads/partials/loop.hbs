@@ -5,7 +5,7 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article id="{{id}}" class="blog-post">
+<article id="{{url}}" class="blog-post">
     {{#if image}}
         <div class="post-header-image" style="background-image: url({{image}})"></div>
     {{else}}
@@ -19,7 +19,7 @@
         </div>
         <hr class="post-header-line top"/>
         <header class="post-header">
-            <h2 class="post-title">{{title}}</h2>
+            <h2 class="post-title"><a href="#{{url}}">{{title}}</a></h2>
         </header>
         <hr class="post-header-line bottom"/>
         <section class="post-content">
