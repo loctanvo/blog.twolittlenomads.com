@@ -20,7 +20,6 @@
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Josefin+Slab|Raleway:700,400'>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lora|Crimson+Text|Amiri|Prata' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{asset "js/jquery.fullPage.css"}}" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         
     {{! Ghost outputs important style and meta data with this tag }}
@@ -32,9 +31,9 @@
 
     <div class="site-wrapper">
         {{! The big featured header }}
-        <div id="fullpage">
+        <div>
             {{^is "paged"}} 
-            <div id="landing-image" class="section main-header-image" data-anchor="landing" style="background-image: url({{@blog.cover}})">
+            <div class="section main-header-image" style="background-image: url({{@blog.cover}})">
                 <header class="main-header">
                     <nav class="main-nav overlay clearfix">
                         {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
@@ -48,22 +47,20 @@
                             <h2 class="page-description">{{@blog.description}}</h2>
                         </div>
                     </div>
-                    <div data-menuanchor="posts">
-                        <a class="scroll-down icon-arrow-left" href="#"  data-offset="-45"><span class="hidden">Scroll Down</span></a>        
+                    <div>
+                        <a class="scroll-down icon-arrow-left" href="#" data-offset="-45"><span class="hidden">Scroll Down</span></a>        
                     </div>
                 </header>
             </div>
             {{/is}}
             
             {{! The main content area on the homepage }}
-            <div class="section" data-anchor="posts" id="post-list">
-                <main id="content" class="content" role="main">
-                
-                    {{! The tag below includes the post loop - partials/loop.hbs }}
-                    {{> "loop"}}
-                
-                </main>  
-            </div>
+            <main id="content" class="content" role="main">
+            
+                {{! The tag below includes the post loop - partials/loop.hbs }}
+                {{> "loop"}}
+            
+            </main>  
         </div>
         <footer class="site-footer clearfix">
             <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
@@ -80,34 +77,20 @@
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
     
     {{^is "paged"}} 
-    <script type="text/javascript" src="{{asset "js/jquery.fullPage.js"}}"></script>        
-    <script type="text/javascript" src="{{asset "js/jquery.slimscroll.min.js"}}"></script>
     <script>
-//            $(document).ready(function() {
-//                $('#fullpage').fullpage({
-//                    anchors: ['landing', 'posts'],
-//                    scrollingSpeed: 1000,
-//                    easing: 'easeInOutCubic',
-//                    scrollOverflow: true,
-//                    autoScrolling: true,
-//                    normalScrollElements: '#post-list'
-//                });
-//            });
-            
-            
-    </script>
-    <script>
-      $(document).ready(function(){ 
-          var viewPortHeight = $(window).height();
-          
+      $(document).ready(function(){
           $('.scroll-down')
             .on('click', function(event) {
                 event.preventDefault();
-                $('html, body').animate({
-                  scrollTop: viewPortHeight
-                }, 1000);
+                scrollTo("main");
              });
       });
+      
+      function scrollTo(selector){
+          $('html, body').animate({
+            scrollTop: $(selector).offset().top
+          }, 1000);
+      }
     </script>
     {{/is}}
 </body>
