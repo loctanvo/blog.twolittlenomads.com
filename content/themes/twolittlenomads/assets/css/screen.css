@@ -1068,7 +1068,7 @@ body:not(.post-template) .post-title {
 }
 
 .post-header-image {
-    height: 40vh;
+    height: 65vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
