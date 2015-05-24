@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div data-menuanchor="posts">
-                        <a class="scroll-down icon-arrow-left" href="#posts"  data-offset="-45"><span class="hidden">Scroll Down</span></a>        
+                        <a class="scroll-down icon-arrow-left" href="#"  data-offset="-45"><span class="hidden">Scroll Down</span></a>        
                     </div>
                 </header>
             </div>
@@ -83,16 +83,31 @@
     <script type="text/javascript" src="{{asset "js/jquery.fullPage.js"}}"></script>        
     <script type="text/javascript" src="{{asset "js/jquery.slimscroll.min.js"}}"></script>
     <script>
-            $(document).ready(function() {
-                $('#fullpage').fullpage({
-                    anchors: ['landing', 'posts'],
-                    scrollingSpeed: 1000,
-                    easing: 'easeInOutCubic',
-                    scrollOverflow: true,
-                    autoScrolling: true,
-                    normalScrollElements: '#post-list'
-                });
-            });
+//            $(document).ready(function() {
+//                $('#fullpage').fullpage({
+//                    anchors: ['landing', 'posts'],
+//                    scrollingSpeed: 1000,
+//                    easing: 'easeInOutCubic',
+//                    scrollOverflow: true,
+//                    autoScrolling: true,
+//                    normalScrollElements: '#post-list'
+//                });
+//            });
+            
+            
+    </script>
+    <script>
+      $(document).ready(function(){ 
+          var viewPortHeight = $(window).height();
+          
+          $('.scroll-down')
+            .on('click', function(event) {
+                event.preventDefault();
+                $('html, body').animate({
+                  scrollTop: viewPortHeight
+                }, 1000);
+             });
+      });
     </script>
     {{/is}}
 </body>
