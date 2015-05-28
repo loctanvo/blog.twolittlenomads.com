@@ -16,10 +16,9 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-<!--    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />-->
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Josefin+Slab|Raleway:700,400'>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Lora|Crimson+Text|Amiri|Prata' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora|Crimson+Text|Amiri|Prata' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         
     {{! Ghost outputs important style and meta data with this tag }}
@@ -61,7 +60,7 @@
                 {{> "loop"}}
             
             </main>
-            <a class="to-top" href="#"><i class="fa fa-chevron-up"></i></a>
+            <a class="to-top" href="#" style="display: none;"><i class="fa fa-chevron-up"></i></a>
         </div>
         <footer class="site-footer clearfix">
             <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
@@ -76,6 +75,7 @@
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/isInViewport.min.js"}}"></script>
     
     {{^is "paged"}} 
     <script>
@@ -93,6 +93,17 @@
                     scrollTop: 0
                 }, 1000); 
             });
+           
+            $( window ).scroll(function() {
+                if ($('main').is( ':in-viewport' )) {
+                    $('.to-top').fadeIn(1000);
+                }
+                else{
+                    $('.to-top').fadeOut(600);
+                }
+            });
+            
+            
       });
       
       function scrollTo(selector){
