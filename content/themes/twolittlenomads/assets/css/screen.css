@@ -720,6 +720,8 @@ body.nav-opened .nav {
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
 .scroll-down {
+    -webkit-animation: bounce 4s 2s infinite;
+    animation: bounce 4s 2s infinite;
     padding: 30px;
     border-radius: 50%;
     background-color: rgba(255,255,255,0.8);
@@ -729,6 +731,7 @@ body.nav-opened .nav {
     margin-top: -10%;
     margin-left: -42px;
     font-size: 25px;
+    color: inherit;
 }
 
 /* Stop it bouncing and increase contrast when hovered */
@@ -747,6 +750,7 @@ body.nav-opened .nav {
     bottom: 20px;
     border-radius: 50%;
     line-height: 10px;
+    color: inherit;
 }
 
 /* Put a semi-opaque radial gradient behind the icon to make it more visible
@@ -2032,7 +2036,6 @@ hr.post-date-line {
     .read-next .post {
         width: 100%;
     }
-
 }
 
 
@@ -2069,30 +2072,30 @@ hr.post-date-line {
 /* Used to bounce .scroll-down on home page */
 @-webkit-keyframes bounce {
     0%, 10%, 25%, 40%, 50% {
-        -webkit-transform: translateY(0) rotate(-90deg);
-                transform: translateY(0) rotate(-90deg);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     20% {
-        -webkit-transform: translateY(-10px) rotate(-90deg);
-                transform: translateY(-10px) rotate(-90deg);
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
     }
     30% {
-        -webkit-transform: translateY(-5px) rotate(-90deg);
-                transform: translateY(-5px) rotate(-90deg);
+        -webkit-transform: translateY(-5px);
+                transform: translateY(-5px);
     }
 }
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
-        -webkit-transform: translateY(0) rotate(-90deg);
-                transform: translateY(0) rotate(-90deg);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     40% {
-        -webkit-transform: translateY(-10px) rotate(-90deg);
-                transform: translateY(-10px) rotate(-90deg);
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
     }
     60% {
-        -webkit-transform: translateY(-5px) rotate(-90deg);
-                transform: translateY(-5px) rotate(-90deg);
+        -webkit-transform: translateY(-5px);
+                transform: translateY(-5px);
     }
 }
 
