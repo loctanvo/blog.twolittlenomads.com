@@ -720,25 +720,15 @@ body.nav-opened .nav {
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
 .scroll-down {
-    display: block;
-    position: absolute;
-    z-index: 100;
-    bottom: 45px;
-    left: 50%;
-    margin-left: -37px;
-    width: 34px;
-    height: 34px;
-    font-size: 34px;
-    text-align: center;
-    text-decoration: none;
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    -webkit-animation: bounce 4s 2s infinite;
-    animation: bounce 4s 2s infinite;
-    padding: 20px;
+    padding: 30px;
     border-radius: 50%;
     background-color: rgba(255,255,255,0.8);
+    line-height: 15px;
+    position:absolute;
+    left: 50%;
+    margin-top: -10%;
+    margin-left: -42px;
+    font-size: 25px;
 }
 
 /* Stop it bouncing and increase contrast when hovered */

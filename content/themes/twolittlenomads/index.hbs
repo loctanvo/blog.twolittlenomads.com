@@ -16,6 +16,7 @@
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel='stylesheet' type='text/css' href="{{asset "css/bootstrap/css/bootstrap.min.css"}}">
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Josefin+Slab|Raleway:700,400'>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lora|Crimson+Text|Amiri|Prata' rel='stylesheet' type='text/css'>
@@ -46,10 +47,8 @@
                             <h2 class="page-description">{{@blog.description}}</h2>
                         </div>
                     </div>
-                    <div>
-                        <a class="scroll-down icon-arrow-left" href="#" data-offset="-45"><span class="hidden">Scroll Down</span></a>        
-                    </div>
                 </header>
+                <a class="scroll-down" href="#"><i class="fa fa-chevron-down"><span class="hidden">Scroll Down</span></i></a>
             </div>
             {{/is}}
             
