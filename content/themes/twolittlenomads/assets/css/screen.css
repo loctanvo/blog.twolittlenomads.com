@@ -1094,6 +1094,34 @@ hr.post-date-line {
 }
 
 /* ==========================================================================
+   5. Overview page
+   ========================================================================== */
+.blog-overview-page{
+    background-color: whitesmoke;
+}
+
+.blog-overview p {
+    max-width: 420px;
+}
+
+.blog-overview.row{
+    margin: 100px auto;
+}
+
+.row-same-height{
+    display: table;
+    width: 100%;
+}
+
+.col-same-height {
+    display: table-cell;
+    float: none !important;
+}
+
+.col-align-middle{
+    vertical-align: middle;
+}
+/* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
@@ -1532,7 +1560,7 @@ hr.post-date-line {
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
-.pagination {
+.paging {
     position: relative;
     width: 80%;
     max-width: 710px;
@@ -1543,7 +1571,7 @@ hr.post-date-line {
     text-align: center;
 }
 
-.pagination a {
+.paging a {
     color: #9EABB3;
     transition: all 0.2s ease;
 }

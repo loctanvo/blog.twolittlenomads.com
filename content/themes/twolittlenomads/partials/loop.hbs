@@ -5,13 +5,16 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article id="{{url}}" class="blog-post">
-    <div class="left">
-        
+<article id="{{url}}" class="blog-overview row">
+    <div class="row-same-height">
+        <div class="col-sm-6 col-same-height col-align-middle">
+            <p class="text-center">{{title}}</p>
+        </div>
+        <div class="col-sm-6 col-same-height col-align-middle">
+            <p>{{excerpt words="75"}}</p>
+        </div>
     </div>
-    <div class="right">
-        
-    </div>
+
 <!--    {{#if image}}
         <div class="post-header-image" style="background-image: url({{image}})"></div>
     {{else}}
@@ -37,4 +40,5 @@
 {{/foreach}}
 
 {{! Previous/next page links - displayed on every page }}
-{{pagination}}
+{{pagination}}    
+
