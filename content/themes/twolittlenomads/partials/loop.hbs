@@ -1,18 +1,42 @@
-{{! Previous/next page links - only displayed on page 2+ }}
-<div class="extra-pagination inner">
-    {{pagination}}
-</div>
-
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
 <article id="{{url}}" class="blog-overview row">
     <div class="row-same-height">
-        <div class="col-sm-6 col-same-height col-align-middle">
-            <p class="text-center">{{title}}</p>
+        {{#if @odd}}
+        <div class="col-md-6 col-same-height col-align-middle title" style="background-image: url({{image}})">
+            <div class="overview-content">
+                <a href="{{url}}" class="title-read-link">
+                    <h2>Read</h2>
+                </a>  
+            </div>
         </div>
-        <div class="col-sm-6 col-same-height col-align-middle">
-            <p>{{excerpt words="75"}}</p>
+        <div class="col-md-6 col-same-height col-align-middle excerpt">
+            <div class="overview-content">
+                <h2>{{title}}</h2>
+                <hr></hr>
+                <p>{{excerpt words="75"}} ...</p>
+                <hr></hr>
+                <a href="{{url}}" class="read-link">READ</a> 
+            </div>
         </div>
+        {{else}}
+        <div class="col-md-6 col-same-height col-align-middle excerpt">
+            <div class="overview-content">
+                <h2>{{title}}</h2>
+                <hr></hr>
+                <p>{{excerpt words="75"}} ...</p>
+                <hr></hr>
+                <a href="{{url}}" class="read-link">READ</a> 
+            </div>
+        </div>
+        <div class="col-md-6 col-same-height col-align-middle title" style="background-image: url({{image}})">
+            <div class="overview-content">
+                <a href="{{url}}" class="title-read-link">
+                    <h2>Read</h2>
+                </a>    
+            </div>
+        </div>
+        {{/if}}
     </div>
 
 <!--    {{#if image}}
