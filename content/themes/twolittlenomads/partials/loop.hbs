@@ -1,3 +1,8 @@
+{{! Previous/next page links - only displayed on page 2+ }}
+<div class="extra-pagination inner">
+    {{pagination}}
+</div>
+
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
 <article id="{{url}}" class="blog-overview row">
@@ -14,7 +19,7 @@
             <div class="overview-content">
                 <h2>{{title}}</h2>
                 <hr></hr>
-                <p>{{excerpt words="75"}} ...</p>
+                <p>{{excerpt words="75"}} [...]</p>
                 <hr></hr>
                 <a href="{{url}}" class="read-link">READ</a> 
             </div>
@@ -24,7 +29,7 @@
             <div class="overview-content">
                 <h2>{{title}}</h2>
                 <hr></hr>
-                <p>{{excerpt words="75"}} ...</p>
+                <p>{{excerpt words="75"}} [...]</p>
                 <hr></hr>
                 <a href="{{url}}" class="read-link">READ</a> 
             </div>
