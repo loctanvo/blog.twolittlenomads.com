@@ -1144,10 +1144,30 @@ hr.post-date-line {
     background-size: cover;
 }
 
-/*.title h2 {
-    color: #FFF;
-    text-decoration: underline;
-}*/
+.arrow {
+  margin-left: -9px;
+  position: relative;
+  z-index: 1;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #FFF;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #FFF;
+  margin-left: 0px;
+  position: absolute;
+  z-index: 1;
+}
 
 .excerpt h2 {
     font-size: 20px;    
