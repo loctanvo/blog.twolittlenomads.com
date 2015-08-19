@@ -523,8 +523,6 @@ body.nav-opened .site-wrapper {
 
 .main-nav {
     position: relative;
-    padding: 35px 40px;
-    margin: 0 0 30px 0;
 }
 
 .main-nav a {
@@ -1008,7 +1006,7 @@ body:not(.post-template) .post-title {
 .post-meta-icon {
     display:block !important;
     text-align:center;
-    margin: 30px 0 10px 0;
+    margin: 30px auto;
 }
 
 .user-meta {
@@ -1195,12 +1193,10 @@ hr.post-date-line {
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
-.post-template .post-header {
-   margin-bottom: 3.4rem;
-}
-
 .post-template .post-title {
-    margin-bottom: 0;
+    margin: 30px 0;
+    font-weight: 500;
+    font-size: 22px;
 }
 
 .post-template .post-meta {
