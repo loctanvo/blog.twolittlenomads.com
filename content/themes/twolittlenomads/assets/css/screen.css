@@ -729,7 +729,7 @@ body.nav-opened .nav {
     line-height: 15px;
     position:absolute;
     left: 50%;
-    margin-top: -10%;
+    margin-top: -20vh;
     margin-left: -42px;
     font-size: 25px;
     color: inherit;

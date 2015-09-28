@@ -4,75 +4,83 @@
 </div>
 
 {{! This is the post loop - each post will be output using this markup }}
-{{#foreach posts}}
-<article id="{{url}}" class="blog-overview row">
-    <div class="row-same-height">
-        {{#if @odd}}
-        <div class="col-md-6 col-same-height col-align-middle title" style="background-image: url({{image}})">
-            <div class="overview-content">
-                <a href="{{url}}" class="title-read-link">
-                    <h2>Read</h2>
-                </a>  
+<div class="hidden-sm hidden-xs">
+    {{#foreach posts}}
+    <article id="{{url}}" class="blog-overview row">
+        <div class="row-same-height">
+            {{#if @odd}}
+            <div class="col-md-6 col-same-height col-align-middle title" style="background-image: url({{image}})">
+                <div class="overview-content">
+                    <a href="{{url}}" class="title-read-link">
+                        <h2>Read</h2>
+                    </a>  
+                </div>
             </div>
-        </div>
-        <div class="col-same-height col-align-middle">
-            <div class="arrow arrow-left"></div>
-        </div>
-        <div class="col-md-6 col-same-height col-align-middle excerpt">
-            <div class="overview-content">
-                <h2>{{title}}</h2>
-                <hr></hr>
-                <p>{{excerpt words="75"}} [...]</p>
-                <hr></hr>
-                <a href="{{url}}" class="read-link">READ</a> 
+            <div class="col-same-height col-align-middle">
+                <div class="arrow arrow-left"></div>
             </div>
-        </div>
-        {{else}}
-        <div class="col-md-6 col-same-height col-align-middle excerpt">
-            <div class="overview-content">
-                <h2>{{title}}</h2>
-                <hr></hr>
-                <p>{{excerpt words="75"}} [...]</p>
-                <hr></hr>
-                <a href="{{url}}" class="read-link">READ</a> 
+            <div class="col-md-6 col-same-height col-align-middle excerpt">
+                <div class="overview-content">
+                    <h2>{{title}}</h2>
+                    <hr></hr>
+                    <p>{{excerpt words="75"}} [...]</p>
+                    <hr></hr>
+                    <a href="{{url}}" class="read-link">READ</a> 
+                </div>
             </div>
-        </div>
-        <div class="col-same-height col-align-middle">
-            <div class="arrow arrow-right"></div>
-        </div>
-        <div class="col-md-6 col-same-height col-align-middle title" style="background-image: url({{image}})">
-            <div class="overview-content">
-                <a href="{{url}}" class="title-read-link">
-                    <h2>Read</h2>
-                </a>    
+            {{else}}
+            <div class="col-md-6 col-same-height col-align-middle excerpt">
+                <div class="overview-content">
+                    <h2>{{title}}</h2>
+                    <hr></hr>
+                    <p>{{excerpt words="75"}} [...]</p>
+                    <hr></hr>
+                    <a href="{{url}}" class="read-link">READ</a> 
+                </div>
             </div>
+            <div class="col-same-height col-align-middle">
+                <div class="arrow arrow-right"></div>
+            </div>
+            <div class="col-md-6 col-same-height col-align-middle title" style="background-image: url({{image}})">
+                <div class="overview-content">
+                    <a href="{{url}}" class="title-read-link">
+                        <h2>Read</h2>
+                    </a>    
+                </div>
+            </div>
+            {{/if}}
         </div>
-        {{/if}}
-    </div>
+    </article>
+    {{/foreach}}
+</div>
 
-<!--    {{#if image}}
-        <div class="post-header-image" style="background-image: url({{image}})"></div>
-    {{else}}
-        <hr class="post-date-line" />
-    {{/if}}
-    <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-    <div class="{{post_class}}">
-        <i class="post-meta-text post-meta-icon fa fa-heart fa-2x"></i>
-        <div class="post-meta post-meta-text tags">
-            {{tags}}
+<div class="visible-xs visible-sm">
+    {{#foreach posts}}
+    <article id="{{url}}" class="blog-overview">
+        <div>
+            <div class="title" style="background-image: url({{image}}); height: 30vh">
+                <div class="overview-content">
+                    <a href="{{url}}" class="title-read-link">
+                        <h2>Read</h2>
+                    </a>  
+                </div>
+            </div>
+            <div>
+                <div class="arrow arrow-left"></div>
+            </div>
+            <div class="excerpt">
+                <div class="overview-content">
+                    <h2>{{title}}</h2>
+                    <hr></hr>
+                    <p>{{excerpt words="75"}} [...]</p>
+                    <hr></hr>
+                    <a href="{{url}}" class="read-link">READ</a> 
+                </div>
+            </div>
         </div>
-        <hr class="post-header-line top"/>
-        <header class="post-header">
-            <h2 class="post-title"><a href="#{{url}}">{{title}}</a></h2>
-        </header>
-        <hr class="post-header-line bottom"/>
-        <section class="post-content">
-            {{content}}
-        </section>
-    </div>-->
-    
-</article>
-{{/foreach}}
+    </article>
+    {{/foreach}}
+</div>
 
 {{! Previous/next page links - displayed on every page }}
 {{pagination}}    
