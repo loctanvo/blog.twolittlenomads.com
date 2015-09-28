@@ -1101,6 +1101,11 @@ hr.post-date-line {
     background-color: #FFF;
 }
 
+.blog-overview.narrow{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
 .blog-overview p {
     font-family: 'EB Garamond', serif;
 }
@@ -1111,9 +1116,18 @@ hr.post-date-line {
     text-align: center;
 }
 
+.blog-overview .overview-content.narrow {
+    padding: 30px;
+}
+
 .row-same-height{
     display: table;
     width: 100%;
+}
+
+.vertical-middle{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .col-same-height {
@@ -1159,6 +1173,15 @@ hr.post-date-line {
   margin-left: 0px;
   position: absolute;
   z-index: 1;
+}
+
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #FFF;
+    margin-top: -10px;
 }
 
 .excerpt h2 {
