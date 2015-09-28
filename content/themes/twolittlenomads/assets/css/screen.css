@@ -195,6 +195,10 @@ body {
     text-rendering: geometricPrecision;
 }
 
+body.overwrite{
+    font-family: 'EB Garamond', serif;
+}
+
 ::-moz-selection {
     background: #D6EDFF;
 }
