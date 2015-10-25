@@ -32,7 +32,14 @@
         <section class="post-content">
             {{content}}
         </section>
-        <div class="comment">
+        <hr class="post-header-line end"/>
+        <div class="thanks">
+            <h5>Thanks for reading!</h5>
+            <div class="comment-toggler read-link">Comments?</div>
+        </div>
+        <div class="comments" style="display:none">
+            <hr class="post-header-line comment"/>
+            <div class="comment-toggler read-link hide-comment">(Collapse comments)</div>
             <div id="disqus_thread"></div>
             <script>
                 /**
@@ -41,7 +48,7 @@
                 */
                 
                 var disqus_config = function () {
-                this.page.url = "http://www.twolittlenomads.com{{url}}";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.url = "{{@blog.url}}{{url}}";  // Replace PAGE_URL with your page's canonical URL variable
                 this.page.identifier = "{{id}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 (function() {  // DON'T EDIT BELOW THIS LINE

@@ -1085,8 +1085,27 @@ hr.post-header-line {
 hr.post-date-line {
     margin: 0;
 }
+
 .post-excerpt {
     margin: 30px 0 0 0;
+}
+
+.thanks {
+    margin: 1.75em auto;
+    text-align: center;
+}
+
+.comment-toggler{
+    text-align: center;
+}
+
+.comment-toggler:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.hide-comment {
+    margin: 1.75em auto;
 }
 
 /* ==========================================================================
