@@ -1124,6 +1124,10 @@ hr.post-date-line {
     text-decoration: none;
 }
 
+.nav-language a:focus {
+    outline: none;
+}
+
 .nav-language a.active{
     border-bottom: 1px solid;
     padding-bottom: 2px;
