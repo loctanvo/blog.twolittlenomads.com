@@ -1097,6 +1097,7 @@ hr.post-date-line {
 
 .comment-toggler{
     text-align: center;
+    font-weight: normal;
 }
 
 .comment-toggler:hover {
