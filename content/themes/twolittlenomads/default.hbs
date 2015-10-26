@@ -15,6 +15,8 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
+    
+    <!--<link rel='stylesheet' type='text/css' href="{{asset "css/bootstrap/css/bootstrap.min.css"}}">-->
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
 <!--    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />-->
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Josefin+Slab|Raleway:700,400'>
@@ -46,7 +48,25 @@
             $('.comment-toggler').click(function(){
                 $('.comments').slideToggle(800);
             });
-        });    
+            
+            $('.scroll-to-german')
+            .on('click', function(event) {
+                event.preventDefault();
+                scrollTo("#deutsch");
+             });
+             
+             $('.scroll-to-norwegian')
+             .on('click', function(event) {
+                event.preventDefault();
+                scrollTo("#norsk");
+             });
+        });
+        
+        function scrollTo(selector){
+          $('html, body').animate({
+            scrollTop: $(selector).offset().top
+          }, 1000);
+        }
     </script>
 </body>
 </html>

@@ -1107,6 +1107,31 @@ hr.post-date-line {
     margin: 1.75em auto;
 }
 
+.nav-language {
+    position: fixed;
+    font-family: Raleway;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+}
+
+.nav-language a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.nav-language li {
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0 10px;
+    float:left;
+}
+
+.nav-language a {
+    
+}
+
 /* ==========================================================================
    5. Overview page
    ========================================================================== */
