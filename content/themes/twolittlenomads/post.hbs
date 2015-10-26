@@ -10,9 +10,10 @@
     <article id="{{url}}" class="blog-post">
         <nav class="nav-language">
             <ul>
-                <li><a href="#english" class="scroll-to-english">English</a></li>
+                <li><a href="#english" class="scroll-to-english active">English</a></li>
                 <li><a href="#deutsch" class="scroll-to-german">Deutsch</a></li>
                 <li><a href="#norsk" class="scroll-to-norwegian">Norsk</a></li>
+                <li class="menu"><a href="#" class="menu-button">Menu</a></li>
             </ul>
         </nav>
     {{#if image}}
@@ -20,12 +21,12 @@
     {{else}}
         <hr class="post-date-line" />
     {{/if}}
-    <nav class="main-nav">
+    <!--<nav class="main-nav">
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
             {{#if @blog.navigation}}
                 <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
             {{/if}}
-        </nav>
+        </nav>-->
     <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
     <div class="{{post_class}}">
         <div>

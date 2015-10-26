@@ -49,23 +49,67 @@
                 $('.comments').slideToggle(800);
             });
             
+            $('.scroll-to-english')
+            .on('click', function(event) {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 1000);
+                
+                setActive('.scroll-to-english'); 
+             });
+            
             $('.scroll-to-german')
             .on('click', function(event) {
-                event.preventDefault();
                 scrollTo("#deutsch");
+                setActive('.scroll-to-german');
              });
              
              $('.scroll-to-norwegian')
              .on('click', function(event) {
-                event.preventDefault();
                 scrollTo("#norsk");
+                setActive('.scroll-to-norwegian');
              });
+             
+             parseLanguage();
         });
         
         function scrollTo(selector){
           $('html, body').animate({
-            scrollTop: $(selector).offset().top
+            scrollTop: $(selector).offset().top-50
           }, 1000);
+        }
+        
+        function setActive(selector){
+            $('a.active').removeClass('active');
+            $(selector).addClass('active');
+        }
+        
+        function parseLanguage(){
+            var language = window.location.hash.substr(1);
+            switch (language) {
+                case "english":
+                case "English":
+                    $('html, body').animate({
+                        scrollTop: 0
+                        }, 1000);
+                        
+                    setActive('.scroll-to-english'); 
+                    break;
+                case "deutsch":
+                case "Deutsch":
+                    scrollTo("#deutsch");
+                    setActive('.scroll-to-german');
+                    break;
+                case "norsk":
+                case "Norsk":
+                    scrollTo("#norsk");
+                    setActive('.scroll-to-norwegian');
+                    break;
+                default:
+                    $('html, body').animate({
+                        scrollTop: 0
+                        }, 1000);
+                }
         }
     </script>
 </body>

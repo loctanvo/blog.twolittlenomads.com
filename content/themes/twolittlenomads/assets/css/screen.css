@@ -799,7 +799,7 @@ body.nav-opened .nav {
     width: auto;
 }
 
-.menu-button {
+/*.menu-button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -830,30 +830,30 @@ body.nav-opened .nav {
 }
 .menu-button:focus {
     outline: 0;
-}
+}*/
 
 /* When the navigation is closed */
-.nav-closed .menu-button {
+/*.nav-closed .menu-button {
     color: #fff;
     border-color: rgba(255, 255, 255, 0.6);
     background-color: rgba(0,0,0,0.2)
 }
 .nav-closed .menu-button:hover {
     color: #222;
-}
+}*/
 
 /* When the navigation is closed and there is no cover image */
-.nav-closed .no-cover .menu-button {
+/*.nav-closed .no-cover .menu-button {
     border-color: #BFC8CD;
     color: #9EABB3;
 }
 .nav-closed .no-cover .menu-button:hover {
     border-color: #555;
     color: #555;
-}
+}*/
 
 /* When the navigation is opened */
-.nav-opened .menu-button {
+/*.nav-opened .menu-button {
     padding: 0 12px;
     background: #111;
     border-color: #111;
@@ -867,7 +867,7 @@ body.nav-opened .nav {
 .nav-opened .menu-button .word {
     opacity: 0;
     transition: all 0.3s ease;
-}
+}*/
 
 .no-cover .main-nav.overlay {
     background: none;
@@ -1114,6 +1114,8 @@ hr.post-date-line {
     letter-spacing: 0.1rem;
     background-color: rgba(0,0,0,0.2);
     width: 100%;
+    padding: 5px 0;
+    z-index: 1;
 }
 
 .nav-language a {
@@ -1121,16 +1123,29 @@ hr.post-date-line {
     text-decoration: none;
 }
 
+.nav-language a.active{
+    border-bottom: 1px solid;
+    padding-bottom: 2px;
+}
+
+.nav-language ul, .nav-language li {
+    padding: 0;
+    margin: 0;
+}
+
 .nav-language li {
     list-style: none;
     text-transform: uppercase;
-    padding: 0 10px;
+    margin-left: 15px;
     float:left;
 }
 
-.nav-language a {
-    
+.nav-language li.menu {
+    float:right;
+    margin-right: 15px;
+    font-weight: bold;
 }
+
 
 /* ==========================================================================
    5. Overview page
@@ -1982,7 +1997,7 @@ hr.post-date-line {
         height: 30px;
     }
 
-    .menu-button {
+    /*.menu-button {
         padding: 0 5px;
         border-radius: 0;
         border-width: 0;
@@ -1997,7 +2012,7 @@ hr.post-date-line {
     body.nav-opened .menu-button {
         background: none;
         border: transparent;
-    }
+    }*/
 
     .main-nav.overlay a:hover {
         color: #fff;
