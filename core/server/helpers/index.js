@@ -37,7 +37,7 @@ coreHelpers.next_post = require('./prev_next');
 coreHelpers.tags = require('./tags');
 coreHelpers.title = require('./title');
 coreHelpers.url = require('./url');
-coreHelpers.custom_title = require('./language_title');
+coreHelpers.language_title = require('./language_title');
 
 // Specialist helpers for certain templates
 coreHelpers.input_password = require('./input_password');
