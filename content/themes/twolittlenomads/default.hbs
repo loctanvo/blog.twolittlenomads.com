@@ -65,34 +65,30 @@
                 $('.comments').slideToggle(800);
             });
             
-            $('.scroll-to-english')
+            $('.language-english')
             .on('click', function(event) {
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 1000);
-                
-                setActive('.scroll-to-english'); 
+                display(".english");
+                setActive('.language-english'); 
              });
             
-            $('.scroll-to-german')
+            $('.language-german')
             .on('click', function(event) {
-                scrollTo("#deutsch");
-                setActive('.scroll-to-german');
+                display(".german");
+                setActive('.language-german');
              });
              
-             $('.scroll-to-norwegian')
+             $('.language-norwegian')
              .on('click', function(event) {
-                scrollTo("#norsk");
-                setActive('.scroll-to-norwegian');
+                display(".norwegian");
+                setActive('.language-norwegian');
              });
              
              parseLanguage();
         });
         
-        function scrollTo(selector){
-          $('html, body').animate({
-            scrollTop: $(selector).offset().top-50
-          }, 1000);
+        function display(selector){
+            $('.language').hide();
+            $(selector).fadeIn();
         }
         
         function setActive(selector){
@@ -105,26 +101,22 @@
             switch (language) {
                 case "english":
                 case "English":
-                    $('html, body').animate({
-                        scrollTop: 0
-                        }, 1000);
-                        
-                    setActive('.scroll-to-english'); 
+                    display(".english");
+                    setActive('.language-english'); 
                     break;
-                case "deutsch":
-                case "Deutsch":
-                    scrollTo("#deutsch");
-                    setActive('.scroll-to-german');
+                case "german":
+                case "German":
+                    display(".german");
+                    setActive('.language-german'); 
                     break;
-                case "norsk":
-                case "Norsk":
-                    scrollTo("#norsk");
-                    setActive('.scroll-to-norwegian');
+                case "norwegian":
+                case "Norwegian":
+                    display(".norwegian");
+                    setActive('.language-norwegian'); 
                     break;
                 default:
-                    $('html, body').animate({
-                        scrollTop: 0
-                        }, 1000);
+                    display(".english");
+                    setActive('.language-english'); 
                 }
         }
     </script>

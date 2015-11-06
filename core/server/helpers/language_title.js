@@ -9,13 +9,13 @@ language_title = function () {
     this.title.split("|").forEach(function(element, index, array){
         if(index == 0)
         {
-            title = title + "<span class='english'>" + element + "</span>"; 
+            title = title + "<span class='english language'>" + element + "</span>"; 
         }
         else if(index == 1){
-            title = title + "<span class='german hidden'>" + element + "</span>";    
+            title = title + "<span class='german language' style='display:none;'>" + element + "</span>";    
         }
         else if(index == 2){
-            title = title + "<span class='norwegian hidden'>" + element + "</span>";
+            title = title + "<span class='norwegian language' style='display:none;'>" + element + "</span>";
         }
     });
     return new hbs.handlebars.SafeString(title || '');
