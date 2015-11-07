@@ -1123,11 +1123,25 @@ hr.post-date-line {
     width: 100%;
     padding: 5px 0;
     z-index: 1;
+    text-transform: uppercase;
+}
+
+.nav-language div{
+    float:left;
+    width: 33.33%;
+}
+
+.nav-language .menu{
+    text-align: right;
 }
 
 .nav-language a {
-    
     text-decoration: none;
+}
+
+
+.nav-language a:hover {
+    color: none;
 }
 
 .nav-language a:focus {
@@ -1144,20 +1158,21 @@ hr.post-date-line {
     margin: 0;
 }
 
+.nav-language ul {
+    text-align: center;
+}
+
 .nav-language li {
     list-style: none;
-    text-transform: uppercase;
-    margin-left: 15px;
-    float:left;
+    margin: 0 10px;
+    display: inline;
 }
 
-.nav-language li.menu {
-    float:right;
-    margin-right: 15px;
+.nav-language .button {
+    margin: 0 10px;
     font-weight: bold;
+    display: block;
 }
-
-
 /* ==========================================================================
    5. Overview page
    ========================================================================== */
