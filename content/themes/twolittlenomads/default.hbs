@@ -59,9 +59,9 @@
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-    <script>                    
+    <script>
         $(document).ready(function() {           
-            parseLanguage();
+            setCurrentLanguage();
             
             $('.comment-toggler').click(function(){
                 $('.comments').slideToggle(800);
@@ -69,21 +69,25 @@
             
             $('.language-english')
             .on('click', function(event) {
+                event.preventDefault();
                 choose('english');
              });
             
             $('.language-german')
             .on('click', function(event) {
+                event.preventDefault();
                 choose('german');
              });
              
              $('.language-norwegian')
              .on('click', function(event) {
+                event.preventDefault();
                 choose('norwegian');
              });
         });
         
         function choose(language){
+            history.replaceState(null, document.title, "#" + language);
             display("." + language);
             setActive('.language-' + language);
             setCookie("language", language)
@@ -99,7 +103,7 @@
             $(selector).addClass('active');
         }
         
-        function parseLanguage(){
+        function setCurrentLanguage(){
             var language = window.location.hash.substr(1);
             if(language === ""){
                 language = getLanguageCookie();
