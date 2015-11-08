@@ -1165,9 +1165,10 @@ hr.post-date-line {
     outline: none;
 }
 
-.nav-language a.active{
+.nav-language a.active, .nav-language a:hover{
     border-bottom: 1px solid;
     padding-bottom: 2px;
+    text-decoration: none;
 }
 
 .nav-language ul, .nav-language li {
@@ -1311,6 +1312,12 @@ hr.post-date-line {
 .read-link:hover, .title-read-link:hover{
     color: #f48d91;
 }
+
+.read-link:focus, .read-link:active {
+    text-decoration: none;
+    color: #333;
+}
+
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
