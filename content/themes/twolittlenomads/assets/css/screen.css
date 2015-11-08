@@ -1125,7 +1125,7 @@ hr.post-date-line {
 }
 
 .nav-language.bigger {
-    padding-top: 20px;
+    padding: 20px 0;
 }
 
 .nav-language.fixed {
@@ -1199,7 +1199,7 @@ hr.post-date-line {
 }
 
 .blog-overview-container{
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
 .blog-overview {
