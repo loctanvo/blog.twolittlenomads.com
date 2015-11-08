@@ -8,8 +8,8 @@
 
 <main class="content" role="main">
     <article id="{{url}}" class="blog-post">
-        <nav class="nav-language">
-            <div class="width-1"><a href="/#overview" class="button read-link back-to-overview">Overview</a></div>
+        <nav class="nav-language fixed white">
+            <div class="width-1"><a href="/#overview" class="button read-link">Overview</a></div>
             <div class="width-4">
                 <ul>
                     <li><a href="#english" class="language-english read-link active">English</a></li>
@@ -24,12 +24,6 @@
     {{else}}
         <hr class="post-date-line" />
     {{/if}}
-    <!--<nav class="main-nav">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-            {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            {{/if}}
-        </nav>-->
     <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
     <div class="{{post_class}}">
         <div>
