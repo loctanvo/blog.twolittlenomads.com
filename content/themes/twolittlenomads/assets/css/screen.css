@@ -1128,7 +1128,14 @@ hr.post-date-line {
 
 .nav-language div{
     float:left;
-    width: 33.33%;
+}
+
+.nav-language div.width-1 {
+    width: 16.67%;
+}
+
+.nav-language div.width-4 {
+    width: 66.66%;
 }
 
 .nav-language .menu{
