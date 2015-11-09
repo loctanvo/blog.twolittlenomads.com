@@ -1079,6 +1079,7 @@ body:not(.post-template) .post-title {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+    padding-top: 35px;
 }
 
 hr.post-header-line {
