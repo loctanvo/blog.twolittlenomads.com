@@ -15,7 +15,11 @@ config = {
 		database: {
 		      client: 'postgres',
 		      connection: process.env.DATABASE_URL,
-		      debug: false
+		      debug: false,
+              pool: {
+                    min: 2,
+                    max: 20
+                }
 	    },
 	    server: {
 	      host: '0.0.0.0',
