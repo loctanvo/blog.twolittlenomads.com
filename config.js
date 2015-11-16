@@ -13,12 +13,13 @@ config = {
         url: 'http://www.twolittlenomads.com/',
         mail: {},
 		database: {
-		      client: 'postgres',
+		      client: 'pg',
 		      connection: process.env.DATABASE_URL,
+              searchPath: 'knex,public',
 		      debug: false,
               pool: {
                     min: 2,
-                    max: 18
+                    max: 20
                 }
 	    },
 	    server: {
