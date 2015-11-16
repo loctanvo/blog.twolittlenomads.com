@@ -18,7 +18,7 @@ config = {
 		      debug: false,
               pool: {
                     min: 2,
-                    max: 20
+                    max: 19
                 }
 	    },
 	    server: {
