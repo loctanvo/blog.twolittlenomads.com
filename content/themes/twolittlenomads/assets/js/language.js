@@ -21,6 +21,10 @@ function initLanguage() {
 
 	function choose(language) {
 		history.replaceState(null, document.title, "#" + language);
+		chooseWithoutModifyingState(language);
+	}
+	
+	function chooseWithoutModifyingState(language){
 		display("." + language);
 		setActive('.language-' + language);
 		setCookie("language", language)
@@ -37,19 +41,18 @@ function initLanguage() {
 	}
 	
 	function setCurrentLanguage() {
-		var language = window.location.hash.substr(1);
-		if (language === "") {
-			language = getLanguageCookie();
-		}
-		if (language.toLowerCase() === "german") {
-			choose('german');
+		var language = window.location.hash.substr(1).toLowerCase();
+		var cookieLanguage = getLanguageCookie();
+		
+		if (language.toLowerCase() === "german" || cookieLanguage === "german") {
+			chooseWithoutModifyingState('german');
 			return;
 		}
-		else if (language.toLowerCase() === "norwegian") {
-			choose('norwegian'); return;
+		else if (language.toLowerCase() === "norwegian" || cookieLanguage === "norwegian") {
+			chooseWithoutModifyingState('norwegian'); return;
 		}
 
-		choose('english');
+		chooseWithoutModifyingState('english');
 	}
 
 	function setLanguageCookie(value) {
