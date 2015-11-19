@@ -41,18 +41,24 @@ function initLanguage() {
 	}
 	
 	function setCurrentLanguage() {
-		var language = window.location.hash.substr(1).toLowerCase();
+		var hash = window.location.hash.substr(1).toLowerCase();
 		var cookieLanguage = getLanguageCookie();
+	
+		var action = choose;
+		if(hash === "overview"){
+			action = chooseWithoutModifyingState;			
+		}
 		
-		if (language.toLowerCase() === "german" || cookieLanguage === "german") {
-			chooseWithoutModifyingState('german');
+		if (hash === "german" || cookieLanguage === "german") {
+			action('german');
 			return;
 		}
-		else if (language.toLowerCase() === "norwegian" || cookieLanguage === "norwegian") {
-			chooseWithoutModifyingState('norwegian'); return;
+		else if (hash === "norwegian" || cookieLanguage === "norwegian") {
+			action('norwegian'); 
+			return;
 		}
 
-		chooseWithoutModifyingState('english');
+		action('english');
 	}
 
 	function setLanguageCookie(value) {
