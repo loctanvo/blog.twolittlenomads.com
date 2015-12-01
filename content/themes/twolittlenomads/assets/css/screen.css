@@ -1102,6 +1102,10 @@ hr.post-date-line {
     text-align: center;
 }
 
+.comment.space-under {
+    margin-bottom: 50px;
+}
+
 .comment-toggler{
     text-align: center;
     font-weight: normal;
