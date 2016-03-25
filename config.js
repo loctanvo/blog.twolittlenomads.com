@@ -13,9 +13,32 @@ config = {
         url: 'http://www.twolittlenomads.com/',
         mail: {},
 		database: {
-		      client: 'postgres',
+		      client: 'mysql',
+		      connection: process.env.JAWSDB_URL,
+		      debug: false,
+              pool: {
+                    min: 2,
+                    max: 10
+                }
+	    },
+	    server: {
+	      host: '0.0.0.0',
+	      port: process.env.PORT
+	    }
+    },
+    
+    production_pg: {
+        url: 'http://www.twolittlenomads.com/',
+        mail: {},
+		database: {
+		      client: 'pg',
 		      connection: process.env.DATABASE_URL,
-		      debug: false
+              searchPath: 'knex,public',
+		      debug: false,
+              pool: {
+                    min: 2,
+                    max: 20
+                }
 	    },
 	    server: {
 	      host: '0.0.0.0',

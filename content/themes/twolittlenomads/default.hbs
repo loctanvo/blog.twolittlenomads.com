@@ -12,7 +12,34 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72376549-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     {{! Styles'n'Scripts }}
     
@@ -43,74 +70,15 @@
     {{! The main JavaScript file for Casper }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-    <script>                    
-        $(document).ready(function() {
+    <script type="text/javascript" src="{{asset "js/language.js"}}"></script>
+    <script>
+        $(document).ready(function() {           
+            initLanguage();
+            
             $('.comment-toggler').click(function(){
                 $('.comments').slideToggle(800);
             });
-            
-            $('.scroll-to-english')
-            .on('click', function(event) {
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 1000);
-                
-                setActive('.scroll-to-english'); 
-             });
-            
-            $('.scroll-to-german')
-            .on('click', function(event) {
-                scrollTo("#deutsch");
-                setActive('.scroll-to-german');
-             });
-             
-             $('.scroll-to-norwegian')
-             .on('click', function(event) {
-                scrollTo("#norsk");
-                setActive('.scroll-to-norwegian');
-             });
-             
-             parseLanguage();
         });
-        
-        function scrollTo(selector){
-          $('html, body').animate({
-            scrollTop: $(selector).offset().top-50
-          }, 1000);
-        }
-        
-        function setActive(selector){
-            $('a.active').removeClass('active');
-            $(selector).addClass('active');
-        }
-        
-        function parseLanguage(){
-            var language = window.location.hash.substr(1);
-            switch (language) {
-                case "english":
-                case "English":
-                    $('html, body').animate({
-                        scrollTop: 0
-                        }, 1000);
-                        
-                    setActive('.scroll-to-english'); 
-                    break;
-                case "deutsch":
-                case "Deutsch":
-                    scrollTo("#deutsch");
-                    setActive('.scroll-to-german');
-                    break;
-                case "norsk":
-                case "Norsk":
-                    scrollTo("#norsk");
-                    setActive('.scroll-to-norwegian');
-                    break;
-                default:
-                    $('html, body').animate({
-                        scrollTop: 0
-                        }, 1000);
-                }
-        }
     </script>
 </body>
 </html>

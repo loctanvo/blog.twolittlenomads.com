@@ -8,32 +8,68 @@
 
 <main class="content" role="main">
     <article id="{{url}}" class="blog-post">
+        <nav class="nav-language fixed white">
+            <div class="width-1"><a href="/#overview" class="button read-link">Overview</a></div>
+            <div class="width-4">
+                <ul>
+                    <li><a href="#english" class="language-english read-link active">English</a></li>
+                    <li><a href="#german" class="language-german read-link">Deutsch</a></li>
+                    <li><a href="#norwegian" class="language-norwegian read-link">Norsk</a></li>
+                </ul>
+            </div>
+            <div class="menu width-1"><a href="#" class="menu-button button read-link">Menu</a></div>  
+        </nav>
     {{#if image}}
         <div class="post-header-image" style="background-image: url({{image}})"></div>
     {{else}}
         <hr class="post-date-line" />
     {{/if}}
-    <nav class="main-nav">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-            {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            {{/if}}
-        </nav>
     <div class="{{post_class}}">
         <div>
-            <i class="post-meta-text post-meta-icon fa fa-heart fa-2x"></i>    
+            <i class="post-meta-text post-meta-icon fa fa-globe fa-2x"></i>    
         </div>
         <hr class="post-header-line top"/>
         <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
+            <h1 class="post-title">{{language_title}}</h1>
         </header>
         <hr class="post-header-line bottom"/>
         <section class="post-content">
-            {{content}}
+            {{language_content}}
         </section>
-        
-    </div>
-</article>
+        <hr class="post-header-line end"/>
+        <div class="thanks">
+            <h5 class="comment-toggler read-link">
+                <span class="language english">Comments?</span>
+                <span class="language german" style="display:none;">Kommentare?</span>
+                <span class="language norwegian" style="display:none;">Kommentarer?</span>
+            </h5>
+        </div>
+        <hr class="post-header-line comment space-under"/>
+        <div class="comments" style="display:none">
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                */
+                
+                var disqus_config = function () {
+                this.page.url = "{{@blog.url}}{{url}}";  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = "{{id}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function() {  // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                
+                s.src = '//twolittlenomads.disqus.com/embed.js';
+                
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </div>
+        </div>
+    </article>
 </main>
 
 {{/post}}

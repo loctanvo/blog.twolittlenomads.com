@@ -8,41 +8,42 @@
 
 <main class="content" role="main">
     <article id="{{url}}" class="blog-post">
-        <nav class="nav-language">
-            <ul>
-                <li><a href="#english" class="scroll-to-english active">English</a></li>
-                <li><a href="#deutsch" class="scroll-to-german">Deutsch</a></li>
-                <li><a href="#norsk" class="scroll-to-norwegian">Norsk</a></li>
-                <li class="menu"><a href="#" class="menu-button">Menu</a></li>
-            </ul>
+        <nav class="nav-language fixed white">
+            <div class="width-1"><a href="/#overview" class="button read-link">Overview</a></div>
+            <div class="width-4">
+                <ul>
+                    <li><a href="#english" class="language-english read-link active">English</a></li>
+                    <li><a href="#german" class="language-german read-link">Deutsch</a></li>
+                    <li><a href="#norwegian" class="language-norwegian read-link">Norsk</a></li>
+                </ul>
+            </div>
+            <div class="menu width-1"><a href="#" class="menu-button button read-link">Menu</a></div>  
         </nav>
     {{#if image}}
         <div class="post-header-image" style="background-image: url({{image}})"></div>
     {{else}}
         <hr class="post-date-line" />
     {{/if}}
-    <!--<nav class="main-nav">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-            {{#if @blog.navigation}}
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            {{/if}}
-        </nav>-->
     <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
     <div class="{{post_class}}">
         <div>
-            <i class="post-meta-text post-meta-icon fa fa-heart fa-2x"></i>    
+            <i class="post-meta-text post-meta-icon fa fa-plane fa-2x"></i>    
         </div>
         <hr class="post-header-line top"/>
         <header class="post-header">
-            <h1 class="post-title">{{title}}</h1>
+            <h1 class="post-title">{{language_title}}</h1>
         </header>
         <hr class="post-header-line bottom"/>
         <section class="post-content">
-            {{content}}
+            {{language_content}}
         </section>
         <hr class="post-header-line end"/>
         <div class="thanks">
-            <h5 class="comment-toggler read-link">Comments?</h5>
+            <h5 class="comment-toggler read-link">
+                <span class="language english">Comments?</span>
+                <span class="language german" style="display:none;">Kommentare?</span>
+                <span class="language norwegian" style="display:none;">Kommentarer?</span>
+            </h5>
         </div>
         <hr class="post-header-line comment"/>
         <div class="comments" style="display:none">
@@ -76,7 +77,7 @@
     {{#next_post}}
     <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
         <section class="post">
-            <h2>{{title}}</h2>
+            <h2>{{language_title}}</h2>
             <p>{{excerpt words="19"}}&hellip;</p>
         </section>
     </a>
@@ -84,7 +85,7 @@
     {{#prev_post}}
     <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
         <section class="post">
-            <h2>{{title}}</h2>
+            <h2>{{language_title}}</h2>
             <p>{{excerpt words="19"}}&hellip;</p>
         </section>
     </a>
