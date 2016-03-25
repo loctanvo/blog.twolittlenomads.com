@@ -1013,6 +1013,10 @@ body:not(.post-template) .post-title {
     margin: 30px auto;
 }
 
+img.post-meta-icon{
+    max-width: 50px;
+}
+
 .user-meta {
     position: relative;
     padding: 0.3rem 40px 0 100px;

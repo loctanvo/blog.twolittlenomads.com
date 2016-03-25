@@ -27,7 +27,15 @@
     <time class="post-date with-line post-meta-text" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
     <div class="{{post_class}}">
         <div>
-            <i class="post-meta-text post-meta-icon fa fa-plane fa-2x"></i>    
+            <img id="stamp-icon" class="post-meta-text post-meta-icon" src="{{asset "/images/stamps/1.png"}}">
+            <script>
+                var stampNo = Math.floor((Math.random() * 30) + 1);
+                var stampImg = document.getElementById("stamp-icon"); 
+                var newStampImg = stampImg.src.replace(/1.png/i, stampNo + ".png");
+                stampImg.src = newStampImg;
+                
+                
+            </script>
         </div>
         <hr class="post-header-line top"/>
         <header class="post-header">
